@@ -1,13 +1,14 @@
 function ContactRow({ contact, setSelectedContactId }) {
+  const { name, email, phone, id } = contact;
   return (
     <tr
       onClick={() => {
-        setSelectedContactId(contact.id);
+        setSelectedContactId(id);
       }}
     >
-      <td>{contact.name}</td>
-      <td>{contact.email}</td>
-      <td>{contact.phone}</td>
+      <td>{name}</td>
+      <td>{email}</td>
+      <td>{phone}</td>
     </tr>
   );
 }

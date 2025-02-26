@@ -33,7 +33,7 @@ function ContactList({ setSelectedContactId }) {
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr className="first-row">
           <td>Name</td>
           <td>Email</td>
           <td>Phone</td>
