@@ -7,7 +7,7 @@ const dummyContacts = [
   { id: 3, name: "BB-8", phone: "888-888-8888", email: "bb8@droids.com" },
 ];
 
-function ContactList() {
+function ContactList({ setSelectedContactId }) {
   const [contacts, setContacts] = useState(dummyContacts);
 
   useEffect(() => {
@@ -38,8 +38,14 @@ function ContactList() {
           <td>Email</td>
           <td>Phone</td>
         </tr>
-        {dummyContacts.map((contact) => {
-          return <ContactRow key={contact.id} contact={contact} />;
+        {contacts.map((contact) => {
+          return (
+            <ContactRow
+              key={contact.id}
+              contact={contact}
+              setSelectedContactId={setSelectedContactId}
+            />
+          );
         })}
       </tbody>
     </table>
